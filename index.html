@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compute companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <script>
+        function makeItPassword()
+      {
+         document.getElementById("password").type = "password";
+         document.getElementById("password").focus();
+      }
+    </script>
+    <body>
+        <section>
+            <div class="form-box">
+                <div class="form-value">
+                        <h2>Login</h2>
+                        <form action="login.php" method="post" id="formName">
+                            <div class="inputbox">
+                                <ion-icon name="lock-closed-outline"></ion-icon>
+                                <input type="email" id="email" name="email"required >
+                                <label for="">Email</label>
+                            </div>
+                          <div class="inputbox">
+                              <ion-icon name="lock-closed-outline"></ion-icon>
+                              <input type="text" onfocus="return makeItPassword()" id="password" name="password" value="" required>
+                              <label for="">Password</label>
+                          </div>
+                          <div class="forgot">
+                              <label for=""><input type="checkbox" name="checkbox" id="rememberMe" value="checked">Remember Me </label>
+                              <a href="forgot.html">Forgot Password?</a>
+                          </div>
+                          <input type='hidden' id='login' name='login' value="">
+                          <input type='hidden' id='redirect' name='redirect' value="">
+                          <button type="submit" class="button" onclick="lsRememberMe()">Login</button>
+                          </form>
+                        <div class="register">
+                            <p>Don't have a account? <a href="registration.html">Register</a></p>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>

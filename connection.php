@@ -1,13 +1,14 @@
 <?php
 require 'vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(DIR);
-$dotenv->load();
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load(); //loads the .env package aloows you to get variables from from env file
 
-$db_host = "127.0.0.1";
-$db_user = getenv('user');
-$db_password = getenv('password');
-$db_name = getenv('db_name');
-mysqli_report(MYSQLI_REPORT_OFF);
+$db_host = $_ENV["db_host"];
+
+$db_user = $_ENV["db_user"];
+$db_password = $_ENV["db_password"];
+$db_name = $_ENV["db_name"]; //databases credentials
+mysqli_report(MYSQLI_REPORT_OFF); //hides data base messages from the client
 $con = @mysqli_connect($db_host, $db_user, $db_password, $db_name);
 
 ?>
